@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Calculator</title>
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 60px);
+      gap: 8px;
+      max-width: 260px;
+      margin: 50px auto;
+    }
+    .button {
+      padding: 15px;
+      font-size: 18px;
+      background: #1f2937;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background: #374151;
+    }
+    .display {
+      grid-column: 1 / -1;
+      background: #0b1222;
+      color: #fff;
+      font-size: 24px;
+      text-align: right;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      min-height: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid">
+    <div class="display" id="display">0</div>
+
+    <!-- Row 1 -->
+    <button onclick="calculation += '1'; updateDisplay();" class="button">1</button>
+    <button onclick="calculation += '2'; updateDisplay();" class="button">2</button>
+    <button onclick="calculation += '3'; updateDisplay();" class="button">3</button>
+    <button onclick="calculation += '+'; updateDisplay();" class="button">+</button>
+
+    <!-- Row 2 -->
+    <button onclick="calculation += '4'; updateDisplay();" class="button">4</button>
+    <button onclick="calculation += '5'; updateDisplay();" class="button">5</button>
+    <button onclick="calculation += '6'; updateDisplay();" class="button">6</button>
+    <button onclick="calculation += '-'; updateDisplay();" class="button">-</button>
+
+    <!-- Row 3 -->
+    <button onclick="calculation += '7'; updateDisplay();" class="button">7</button>
+    <button onclick="calculation += '8'; updateDisplay();" class="button">8</button>
+    <button onclick="calculation += '9'; updateDisplay();" class="button">9</button>
+    <button onclick="calculation += '*'; updateDisplay();" class="button">*</button>
+
+    <!-- Row 4 -->
+    <button onclick="calculation += '0'; updateDisplay();" class="button">0</button>
+    <button onclick="calculation += '.'; updateDisplay();" class="button">.</button>
+    <button onclick="
+      try {
+        calculation = eval(calculation).toString();
+        updateDisplay();
+      } catch(e) {
+        calculation = 'Error';
+        updateDisplay();
+        calculation = '';
+      }
+    " class="button">=</button>
+    <button onclick="calculation += '/'; updateDisplay();" class="button">/</button>
+
+    <!-- Row 5 -->
+    <button onclick="calculation = ''; updateDisplay();" class="button" style="grid-column: 1 / -1; background:#dc2626;">Clear</button>
+  </div>
+
+  <script>
+    let calculation = '';
+
+    function updateDisplay() {
+      document.getElementById('display').textContent = calculation || '0';
+    }
+  </script>
+
+</body>
+</html>
