@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📝 To-Do List</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📝 To-Do List</h1>
+
+    <div class="todo-input-grid">
+      <input class="js-name-input" type="text" placeholder="Enter task name…" />
+      <input class="js-due-date-input" type="date" />
+      <button class="add-btn">➕ Add Task</button>
+    </div>
+
+    <div class="todo-header">
+      <div>Task</div>
+      <div>Due Date</div>
+      <div>Status</div>
+    </div>
+
+    <!-- IMPORTANT: this is a BLOCK container; rows handle the 3-column layout -->
+    <div class="js-todo-list todo-list"></div>
+
+    <div class="footer-bar">
+      <span class="count"><strong>0</strong> items</span>
+      <div class="footer-actions">
+        <button class="clear-done-btn">Clear Completed</button>
+        <button class="sort-btn">Sort by Date</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
