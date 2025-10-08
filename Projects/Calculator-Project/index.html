@@ -4,38 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Simple Calculator</title>
-  <style>
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 60px);
-      gap: 8px;
-      max-width: 260px;
-      margin: 50px auto;
-    }
-    .button {
-      padding: 15px;
-      font-size: 18px;
-      background: #1f2937;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .button:hover {
-      background: #374151;
-    }
-    .display {
-      grid-column: 1 / -1;
-      background: #0b1222;
-      color: #fff;
-      font-size: 24px;
-      text-align: right;
-      padding: 10px;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      min-height: 40px;
-    }
-  </style>
+  <link rel="stylesheet" href="../Calculator-Project/index.css">
 </head>
 <body>
 
@@ -79,13 +48,7 @@
     <button onclick="calculation = ''; updateDisplay();" class="button" style="grid-column: 1 / -1; background:#dc2626;">Clear</button>
   </div>
 
-  <script>
-    let calculation = '';
-
-    function updateDisplay() {
-      document.getElementById('display').textContent = calculation || '0';
-    }
-  </script>
+  <script src="../Calculator-Project/index.js"></script>
 
 </body>
 </html>

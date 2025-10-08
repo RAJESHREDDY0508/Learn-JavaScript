@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  <script>
+    const product = {
+      name: 'socks',
+      price: '1090,'
+    };
+    console.log(product);
+    console.log(product.name);
+
+    product.name = 'Shoe';
+    console.log(product);
+
+    product.newProperty = "hi";
+    console.log(product);
+
+    delete product.newProperty;
+    console.log(product);
+
+    const product2 = {
+      name: 'Shirt',
+      'delivery-time': '1 day',
+      rating: {stars: 4.5, count: 87},
+      fun: function function1(){
+        console.log('functions can be inside an object')
+      }
+    };
+    console.log(product2);
+    console.log(product2.name);
+    console.log(product2['name']);
+    console.log(product2['delivery-time']);
+    console.log(product2.rating.stars)
+    console.log(product2.fun);
+    product2.fun;
+
+    console.log(JSON.stringify(product2));
+    num = (JSON.stringify(product2));
+    console.log(JSON.parse(num));
+
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+
+    const object1 = {
+      message: 'Hello',
+      price: 899
+    };
+    const object2 = object1;
+    object1.message = 'Good Job!';
+    console.log(object1);
+
+    const object3 = {
+      message: 'Good Job!'
+    };
+    console.log(object1 === object3);
+    console.log(object2 === object1);
+
+    //const message = object1.message;
+    const {message, price} = object1;
+    console.log(message, price);
+
+    const object5 = { 
+      message,
+      method() {
+        console.log(method);
+      }
+    };
+    console.log(object5.message);
+
+  </script>
+</body>
+</html>

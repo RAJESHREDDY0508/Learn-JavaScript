@@ -1,0 +1,30 @@
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 60px);
+      gap: 8px;
+      max-width: 260px;
+      margin: 50px auto;
+    }
+    .button {
+      padding: 15px;
+      font-size: 18px;
+      background: #1f2937;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background: #374151;
+    }
+    .display {
+      grid-column: 1 / -1;
+      background: #0b1222;
+      color: #fff;
+      font-size: 24px;
+      text-align: right;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      min-height: 40px;
+    }
